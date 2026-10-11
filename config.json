@@ -1,0 +1,12 @@
+{
+    "ms711": {
+        "DIR": "/dataloggers/eko-ms711",
+        "PREFIX": "eko_ms711_",
+        "DATA_DIR": "C:\\Users\\nuc\\Desktop\\EKO-711"
+    },
+    "ms711-dni": {
+        "DIR": "/dataloggers/eko-ms711-dni",
+        "PREFIX": "eko_ms711_dni_",
+        "DATA_DIR": "C:\\Users\\nuc\\Desktop\\EKO-711-DNI"
+    }
+}

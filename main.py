@@ -6,6 +6,7 @@ import os
 import traceback
 from datetime import datetime
 
+from config import DATA_DIR, DIR, FTP_IP, FTP_PASS, FTP_USER, PREFIX
 from uploader import ftp_upload_files
 from utils import archive_past_days
 
@@ -17,13 +18,6 @@ os.chdir(dname)
 logging.config.fileConfig("logging.conf", disable_existing_loggers=False)
 logger = logging.getLogger(__name__)
 
-IP = ""
-USER = ""
-PASSWORD = ""
-DIR = "/dataloggers/test"
-PREFIX = "eko_ms711_"
-
-DATA_DIR = "C:\\Users\\orestis\\Desktop\\EKO-711"
 ARCHIVE_DIR = f"{DATA_DIR}\\archive"
 
 csv_files = glob.glob(f"{DATA_DIR}\\*\\*.csv")
@@ -35,9 +29,9 @@ older_files = list(set(csv_files) - set(today_files))
 
 def main():
     ftp_upload_files(
-        ip=IP,
-        user=USER,
-        passwd=PASSWORD,
+        ip=FTP_IP,
+        user=FTP_USER,
+        passwd=FTP_PASS,
         dir=DIR,
         local_files=csv_files,
         monthly_folders=True,
